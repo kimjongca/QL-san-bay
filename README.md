@@ -14,19 +14,19 @@ Dự án này giúp:
  -Kiểm soát dữ liệu chặt chẽ: Tích hợp bộ kiểm tra định dạng ngày giờ nghiêm ngặt và xử lý trôi lệnh/bộ đệm an toàn
 
 Dự án được duy trì và phát triển bởi các thành viên thuộc Nhóm 3 làm Bài tập lớn K67:
-1.Nguyễn Nguyên Kha( nhóm trưởng)
+ 1.Nguyễn Nguyên Kha( nhóm trưởng)
 MSSV: 6751071028
 TK github: NguyenKha07
-2.Nguyễn Công Anh
+ 2.Nguyễn Công Anh
 MSSV: 6751071003
 TK github: kimjongca
-3.Nguyễn Đức Phát
+ 3.Nguyễn Đức Phát
 MSSV: 6751071055
 TK github: JakeNguyen27
-4.Ngô Thị Ngọc Anh
+ 4.Ngô Thị Ngọc Anh
 MSSV: 6751071001
 TK github: ngocanhngothi16
-5.Trần Ngô Tuấn Kiệt
+ 5.Trần Ngô Tuấn Kiệt
 MSSV: 6751071041
 TK github: 
 
