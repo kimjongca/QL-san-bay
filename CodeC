@@ -1,0 +1,128 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX_FLIGHTS 100
+#define MAX_PASSENGERS 500
+#define CODE_LEN 20
+
+typedef struct {
+    char code[CODE_LEN];
+    char from[50];
+    char to[50];
+    char date[15]; 
+    char time[10]; 
+    double price;
+    int capacity;
+    int booked;
+    int active;    
+} Flight;
+
+typedef struct {
+    char ticket[20];
+    char flightCode[CODE_LEN];
+    char fullName[50];
+    char phone[15];
+    int active;    
+} Passenger;
+
+Flight flights[MAX_FLIGHTS];
+int flightCount = 0;
+
+Passenger passengers[MAX_PASSENGERS];
+int passengerCount = 0;
+
+// Khai báo nguyên mẫu hàm
+void menu(void);
+int validPhone(const char *phone);
+int phoneExists(const char *phone);
+int validDate(const char *date);
+int validTime(const char *time);
+int findFlight(const char *code);
+int findPassenger(const char *ticket);
+void readLine(const char *prompt, char *str, int size);
+double readDouble(const char *prompt, double min);
+int readInt(const char *prompt, int min, int max);
+
+void printFlight(const Flight *f);
+void addFlight(void);
+void listFlights(void);
+void searchFlights(void);
+void sortFlights(void);
+void bookTicket(void);
+void cancelTicket(void);
+void listTickets(void);
+void searchTicket(void);
+void updateFlight(void);
+void deleteFlight(void);
+void revenueReport(void);
+void saveData(void);
+void loadData(void);
+
+// ================= IMPLEMENTATION =================
+
+void menu(void)
+{
+    puts("\n========== QUAN LY CHUYEN BAY & DAT VE ==========");
+    puts("1. Them chuyen bay");
+    puts("2. Xem danh sach chuyen bay");
+    puts("3. Tim/loc chuyen bay");
+    puts("4. Sap xep chuyen bay");
+    puts("5. Dat ve");
+    puts("6. Huy ve");
+    puts("7. Xem danh sach ve");
+    puts("8. Tim ve theo ma");
+    puts("9. Cap nhat chuyen bay");
+    puts("10. Xoa chuyen bay");
+    puts("11. Thong ke doanh thu");
+    puts("0. Luu va thoat");
+}
+
+int validPhone(const char *phone)
+{
+    int len = strlen(phone);
+    if(len < 10 || len > 11)
+        return 0;
+    for(int i = 0; i < len; i++)
+    {
+        if(!isdigit((unsigned char)phone[i]))
+            return 0;
+    }
+    return 1;
+}
+
+int phoneExists(const char *phone)
+{
+    for(int i = 0; i < passengerCount; i++)
+    {
+        if(passengers[i].active && strcmp(passengers[i].phone, phone) == 0)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int validDate(const char *date) { return strlen(date) == 10; }
+
+int validTime(const char *time) { 
+    int h, m;
+    if (sscanf(time, "%d:%d", &h, &m) != 2) return 0;
+    if (h < 0 || h > 23 || m < 0 || m > 59) return 0;
+    return 1;
+}
+
+int findFlight(const char *code) {
+    for(int i = 0; i < flightCount; i++) {
+        if(flights[i].active && strcmp(flights[i].code, code) == 0) return i;
+    }
+    return -1;
+}
+
+int findPassenger(const char *ticket) {
+    for(int i = 0; i < passengerCount; i++) {
+        if(passengers[i].active && strcmp(passengers[i].ticket, ticket) == 0) return i;
+    }
+    return -1;
+}
