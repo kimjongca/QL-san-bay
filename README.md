@@ -3,10 +3,10 @@
 Bài tập lớn môn Kỹ thuật Lập trình C — Trường Đại học Giao thông Vận tải Phân hiệu tại TP.HCM (UTC2).
 > [!NOTE]
 ## 👥 Thành viên nhóm
- 1.Nguyễn Nguyên Kha( nhóm trưởng) MSSV: 6751071028  
+ 1.Ngô Thị Ngọc Anh ( nhóm trưởng ) MSSV: 6751071001  
  2.Nguyễn Công Anh  MSSV: 6751071003  
  3.Nguyễn Đức Phát  MSSV: 6751071055  
- 4.Ngô Thị Ngọc Anh  MSSV: 6751071001  
+ 4.Nguyễn Nguyên Kha  MSSV: 6751071028 
  5.Trần Ngô Tuấn Kiệt  MSSV: 6751071041
 > [!IMPORTANT]
 ## 🛠️ Công nghệ sử dụng
